@@ -10,4 +10,5 @@ Gruf.configure do |c|
   c.backtrace_on_error = !Rails.env.production?
   c.backtrace_on_error = !Rails.env.production?
   c.use_exception_message = !Rails.env.production?
+  c.interceptors.use(TugoCommon::Interceptor::ErrorInterceptor)
 end

@@ -1,11 +1,15 @@
 CREATE TABLE roles (
   id bigserial PRIMARY KEY,
 
-  role_name varchar NULL,
+  role_id varchar NOT NULL,
+
+  role_name varchar NOT NULL,
 
   parent_role varchar NULL,
 
-  depth int8 NULL,
+  depth int8 NOT NULL,
+
+  description varchar NULL,
 
   created_at timestamp without time zone NOT NULL,
 
@@ -15,3 +19,19 @@ CREATE TABLE roles (
 COMMENT ON TABLE roles IS 'Roles';
 
 -- Column comments
+
+COMMENT ON COLUMN roles.id IS 'ID';
+
+COMMENT ON COLUMN roles.role_id IS 'Role ID';
+
+COMMENT ON COLUMN roles.role_name IS 'Role Name';
+
+COMMENT ON COLUMN roles.parent_role IS 'Parent Role';
+
+COMMENT ON COLUMN roles.depth IS 'Depth';
+
+COMMENT ON COLUMN roles.description IS 'Description';
+
+COMMENT ON COLUMN roles.created_at IS 'Created At';
+
+COMMENT ON COLUMN roles.updated_at IS 'Updated At';
