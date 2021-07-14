@@ -3,6 +3,14 @@ CREATE TABLE master_provinces (
 
   "name" varchar NOT NULL,
 
+  "code" int8 NOT NULL,
+
+  code_name varchar NOT NULL,
+
+  division_type varchar NOT NULL,
+
+  phone_code int8 NOT NULL,
+
   "order" int4 NOT NULL,
 
   is_usable bool NOT NULL,
@@ -21,6 +29,14 @@ COMMENT ON TABLE master_provinces IS 'Province';
 COMMENT ON COLUMN master_provinces.id IS 'ID';
 
 COMMENT ON COLUMN master_provinces."name" IS 'Name';
+
+COMMENT ON COLUMN master_provinces."code" IS 'Code';
+
+COMMENT ON COLUMN master_provinces."code_name" IS 'Code Name';
+
+COMMENT ON COLUMN master_provinces."division_type" IS 'Division Type';
+
+COMMENT ON COLUMN master_provinces."phone_code" IS 'Phone Code';
 
 COMMENT ON COLUMN master_provinces."order" IS 'Order';
 

@@ -3,6 +3,12 @@ CREATE TABLE master_countries (
 
   "name" varchar NOT NULL,
 
+  "code" int8 NOT NULL,
+
+  code_name varchar NOT NULL,
+
+  phone_code int8 NOT NULL,
+
   "order" int4 NOT NULL,
 
   is_usable bool NOT NULL,
@@ -19,6 +25,12 @@ COMMENT ON TABLE master_countries IS 'Country';
 COMMENT ON COLUMN master_countries.id IS 'ID';
 
 COMMENT ON COLUMN master_countries."name" IS 'Name';
+
+COMMENT ON COLUMN master_countries."code" IS 'Code';
+
+COMMENT ON COLUMN master_countries."code_name" IS 'Code Name';
+
+COMMENT ON COLUMN master_countries."phone_code" IS 'Phone Code';
 
 COMMENT ON COLUMN master_countries."order" IS 'Order';
 

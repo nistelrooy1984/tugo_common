@@ -3,6 +3,14 @@ CREATE TABLE master_wards (
 
   "name" varchar NOT NULL,
 
+  "code" int8 NOT NULL,
+
+  code_name varchar NOT NULL,
+
+  division_type varchar NOT NULL,
+
+  short_code_name varchar NOT NULL,
+
   "order" int4 NOT NULL,
 
   is_usable bool NOT NULL,
@@ -21,6 +29,14 @@ COMMENT ON TABLE master_wards IS 'Ward';
 COMMENT ON COLUMN master_wards.id IS 'ID';
 
 COMMENT ON COLUMN master_wards."name" IS 'Name';
+
+COMMENT ON COLUMN master_wards."code" IS 'Code';
+
+COMMENT ON COLUMN master_wards."code_name" IS 'Code Name';
+
+COMMENT ON COLUMN master_wards."division_type" IS 'Division Type';
+
+COMMENT ON COLUMN master_wards."short_code_name" IS 'Short Code Name';
 
 COMMENT ON COLUMN master_wards."order" IS 'Order';
 
