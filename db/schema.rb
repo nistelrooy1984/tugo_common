@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_214100) do
     t.boolean "is_admin", comment: "Is Admin"
     t.bigint "modified_by_id", null: false, comment: "Modified By ID"
     t.string "description"
-    t.bigint "deleted"
+    t.bigint "deleted", comment: "Deleted"
     t.datetime "created_at", null: false, comment: "Created At"
     t.datetime "updated_at", null: false, comment: "Updated At"
   end

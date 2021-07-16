@@ -1,0 +1,6 @@
+vi:
+  processing_completed_failure: Xử lý không thành công.
+  errors:
+    messages:
+      role:
+        record_not_found: Không tìm thấy Role.

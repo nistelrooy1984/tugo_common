@@ -60,6 +60,8 @@ COMMENT ON COLUMN users.is_admin IS 'Is Admin';
 
 COMMENT ON COLUMN users.modified_by_id IS 'Modified By ID';
 
+COMMENT ON COLUMN users.deleted IS 'Deleted';
+
 COMMENT ON COLUMN users.created_at IS 'Created At';
 
 COMMENT ON COLUMN users.updated_at IS 'Updated At';
