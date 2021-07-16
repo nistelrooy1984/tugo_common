@@ -3,9 +3,7 @@
 module Common
   class RolesPresenter < PresenterBase
     def initialize(roles)
-      super(
-        @roles = roles
-      )
+      @roles = roles
     end
 
     def generate_response
