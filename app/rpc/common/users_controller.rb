@@ -11,9 +11,23 @@ module Common
     def get_users; end
 
     # cmn_00009 Upsert User
-    def upsert_user; end
+    def upsert_user
+      request_params = Common::UpsertUserRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::UpsertUserService.new(request_params, nil)
+      service.run!
+      presenter = Common::UpsertUserPresenter.new(service.result)
+      presenter.generate_response
+    end
 
     # cmn_00010 User Login
-    def user_login; end
+    def user_login
+      request_params = Common::UserLoginRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::UserLoginService.new(request_params, nil)
+      service.run!
+      presenter = Common::UserPresenter.new(service.result)
+      presenter.generate_response
+    end
   end
 end

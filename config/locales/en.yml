@@ -35,4 +35,6 @@ en:
     messages:
       role:
         record_not_found: Can't find by role.
+      user:
+        record_not_found: Can't find by user %{user_login}.
 

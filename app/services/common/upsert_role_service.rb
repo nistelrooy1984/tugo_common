@@ -12,7 +12,7 @@ module Common
     end
 
     def run!
-      role = Role.find_or_initialize_by(id: @request_params.role.id)
+      role = Role.find_or_initialize_by(role_id: @request_params.role.role_id)
 
       role.role_id = @request_params.role.role_id
       role.role_name = @request_params.role.role_name
