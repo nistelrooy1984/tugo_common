@@ -62,6 +62,9 @@ attach:
 seed_fu:
 	docker-compose run --rm app bin/rails db:seed_fu
 
+init_data:
+	docker-compose run --rm app psql -U postgres -d app_development -h db -p 5432 -f ./db/prod_data_sql/00_prod_data_insert.sql
+
 bash:
 	docker-compose exec app /bin/bash
 
