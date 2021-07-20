@@ -5,10 +5,22 @@ module Common
     bind ::Tugo::Common::V1::UserService::Service
 
     # cmn_00007 Get User By User Name
-    def get_user_by_user_name; end
+    def get_user_by_user_name
+      request_params = Common::GetByUserNameRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::GetByUserNameService.new(request_params, nil)
+      service.run!
+      presenter = Common::UserPresenter.new(service.result)
+      presenter.generate_response
+    end
 
     # cmn_00008 Get Users
-    def get_users; end
+    def get_users
+      service = Common::GetUsersService.new(nil)
+      service.run!
+      presenter = Common::UsersPresenter.new(service.results)
+      presenter.generate_response
+    end
 
     # cmn_00009 Upsert User
     def upsert_user
