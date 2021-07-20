@@ -6,7 +6,7 @@ module Common
     attribute :user_name, :string
     attribute :encrypted_password, :string
     attribute :first_name, :string
-    attribute :last_name, :integer
+    attribute :last_name, :string
     attribute :email, :string
     attribute :phone, :string
     attribute :department_id, :integer
