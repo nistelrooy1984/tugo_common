@@ -8,7 +8,7 @@ module Common
 
     def generate_response
       Tugo::Common::V1::CountriesProvincesDistrictsResponse.new(
-        countries: @countries_provinces_districts[:countries]&.each_with_object([]) do |country, arr|      
+        countries: @countries_provinces_districts[:countries]&.each_with_object([]) do |country, arr|
           arr << Tugo::Common::V1::Country.new(
             id: proto_int64(country.id),
             name: proto_string(country.name),
@@ -20,7 +20,7 @@ module Common
           )
         end,
 
-        provinces: @countries_provinces_districts[:provinces]&.each_with_object([]) do |province, arr|      
+        provinces: @countries_provinces_districts[:provinces]&.each_with_object([]) do |province, arr|
           arr << Tugo::Common::V1::Province.new(
             id: proto_int64(province.id),
             name: proto_string(province.name),
@@ -34,7 +34,7 @@ module Common
           )
         end,
 
-        districts: @countries_provinces_districts[:districts]&.each_with_object([]) do |district, arr|      
+        districts: @countries_provinces_districts[:districts]&.each_with_object([]) do |district, arr|
           arr << Tugo::Common::V1::District.new(
             id: proto_int64(district.id),
             name: proto_string(district.name),

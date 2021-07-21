@@ -16,7 +16,7 @@ module Common
       provinces = Master::Province.all
 
       districts = Master::District.all
-      
+
       @results = {
         countries: countries,
         provinces: provinces,
