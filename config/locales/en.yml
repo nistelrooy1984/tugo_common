@@ -38,5 +38,5 @@ en:
       user:
         record_not_found: Can't find by user %{user_login}.
       user_id:
-        record_not_found: Can't find by user.
+        record_not_found: Can't find by user %{user_id}.
 
