@@ -20,6 +20,8 @@ module Master
   class Ward < ApplicationMasterRecord
     self.table_name = 'master_wards'
 
+    scope :where_district_id, ->(district_id) { where(master_district_id: district_id) if district_id.present? }
+
     belongs_to :district
   end
 end
