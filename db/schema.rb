@@ -100,4 +100,5 @@ ActiveRecord::Schema.define(version: 2021_07_05_214100) do
     t.datetime "created_at", null: false, comment: "Created At"
     t.datetime "updated_at", null: false, comment: "Updated At"
   end
+  
 end
