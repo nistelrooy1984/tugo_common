@@ -12,7 +12,7 @@ module Common
     end
 
     def run!
-      wards = Master::Ward.where_district_id(@request_params.district_id)
+      wards = Master::Ward.where(master_district_id: @request_params.district_id)
 
       raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.ward.record_not_found') if wards.blank?
 
