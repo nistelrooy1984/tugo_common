@@ -19,7 +19,6 @@ module Common
             is_usable: proto_bool(country.is_usable)
           )
         end,
-
         provinces: @countries_provinces_districts[:provinces]&.each_with_object([]) do |province, arr|
           arr << Tugo::Common::V1::Province.new(
             id: proto_int64(province.id),
@@ -33,7 +32,6 @@ module Common
             master_country_id: proto_int64(province.master_country_id)
           )
         end,
-
         districts: @countries_provinces_districts[:districts]&.each_with_object([]) do |district, arr|
           arr << Tugo::Common::V1::District.new(
             id: proto_int64(district.id),
