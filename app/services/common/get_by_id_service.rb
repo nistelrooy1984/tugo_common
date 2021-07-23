@@ -14,7 +14,7 @@ module Common
     def run!
       user = User.find_by(id: @request_params.user_id)
 
-      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.user_id.record_not_found') if user.blank?
+      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.user_id.record_not_found', user_id: @request_params.user_id) if user.blank?
 
       @result = user
     end

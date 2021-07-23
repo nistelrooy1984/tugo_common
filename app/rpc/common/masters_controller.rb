@@ -13,6 +13,13 @@ module Common
     end
 
     # cmn_00012 Get Wards By District ID
-    def get_wards_by_district_id; end
+    def get_wards_by_district_id
+      request_params = Common::GetWardsByDistrictIdRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::GetWardsByDistrictIdService.new(request_params, nil)
+      service.run!
+      presenter = Common::WardsPresenter.new(service.results)
+      presenter.generate_response
+    end
   end
 end
