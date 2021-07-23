@@ -14,7 +14,7 @@ module Common
     def run!
       wards = Master::Ward.where(master_district_id: @request_params.district_id)
 
-      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.ward.record_not_found') if wards.blank?
+      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.ward.record_not_found', district_id: @request_params.district_id) if wards.blank?
 
       @results = {
         wards: wards

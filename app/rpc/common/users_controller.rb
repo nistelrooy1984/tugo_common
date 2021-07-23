@@ -41,5 +41,15 @@ module Common
       presenter = Common::UserPresenter.new(service.result)
       presenter.generate_response
     end
+
+    # cmn_00013 Get User By User Id
+    def get_user_by_id
+      request_params = Common::GetByIdRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::GetByIdService.new(request_params, nil)
+      service.run!
+      presenter = Common::UserPresenter.new(service.result)
+      presenter.generate_response
+    end
   end
 end
