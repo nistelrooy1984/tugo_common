@@ -5,7 +5,12 @@ module Common
     bind ::Tugo::Common::V1::MasterService::Service
 
     # cmn_00011 Get Countries and Provinces and Districts
-    def get_countries_provinces_districts; end
+    def get_countries_provinces_districts
+      service = Common::GetCountriesProvincesDistrictsService.new(nil)
+      service.run!
+      presenter = Common::CountriesProvincesDistrictsPresenter.new(service.results)
+      presenter.generate_response
+    end
 
     # cmn_00012 Get Wards By District ID
     def get_wards_by_district_id; end
