@@ -2,19 +2,13 @@
 
 module Common
   class UserLoginRequestParams < TugoCommon::RequestParamsBase
-    attribute :user_name, :string
-    attribute :encrypted_password, :string
-    attribute :email, :string
-    attribute :phone, :string
+    attribute :user_info, :string
 
-    validates :email, email: true, allow_blank: true
+    validates :user_info, presence: true
 
     def initialize(params)
       super(
-        user_name: params&.user_name&.value,
-        encrypted_password: params&.encrypted_password&.value,
-        email: params&.email&.value,
-        phone: params&.phone&.value
+        user_info: params&.user_info&.value
       )
     end
   end

@@ -36,7 +36,7 @@ en:
       role:
         record_not_found: Can't find by role.
       user:
-        record_not_found: Can't find by user %{user_login}.
+        record_not_found: Can't find by user %{user_info}.
       ward:
         record_not_found: Can't find ward by district_id %{district_id}.
       user_id:

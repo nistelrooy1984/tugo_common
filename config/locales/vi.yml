@@ -5,4 +5,4 @@ vi:
       role:
         record_not_found: Không tìm thấy Role.
       user:
-        record_not_found: Không tìm thấy người dùng %{user_login}.
+        record_not_found: Không tìm thấy người dùng %{user_info}.

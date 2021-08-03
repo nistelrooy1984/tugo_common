@@ -12,13 +12,9 @@ module Common
     end
 
     def run!
-      user_login = @request_params.user_name || @request_params.email || @request_params.phone
+      user = User.when_user_info(@request_params.user_info)
 
-      user = User.where_user_name(@request_params.user_name)
-                 .where_email(@request_params.email)
-                 .where_phone(@request_params.phone)
-
-      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.user.record_not_found', user_login: user_login) if user.blank?
+      raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.user.record_not_found', user_info: @request_params.user_info) if user.blank?
 
       @result = user.first
     end
