@@ -8,7 +8,12 @@ module Common
     def get_department_by_id; end
 
     # cmn_00005 Get Departments
-    def get_departments; end
+    def get_departments
+      service = Common::GetDepartmentsService.new(nil)
+      service.run!
+      presenter = Common::DepartmentsPresenter.new(service.results)
+      presenter.generate_response
+    end
 
     # cmn_00006 Upsert Department
     def upsert_department; end
