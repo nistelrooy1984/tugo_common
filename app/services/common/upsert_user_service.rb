@@ -21,10 +21,10 @@ module Common
       user.email = @request_params.user.email
       user.phone = @request_params.user.phone
       user.department_id = @request_params.user.department_id
-      user.role_id = @request_params.user.role_id
+      user.role_id = @request_params.user.role_id || Role.last&.id || 0
       user.reports_to_id = @request_params.user.reports_to_id
       user.is_admin = @request_params.user.is_admin
-      user.modified_by_id = @request_params.user.modified_by_id
+      user.modified_by_id = @request_params.user.modified_by_id || User.first&.id || 0
       user.description = @request_params.user.description
       user.deleted = @request_params.user.deleted || 0
 
