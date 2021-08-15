@@ -20,9 +20,9 @@ module Common
 
       raise ActiveRecord::RecordNotFound, I18n.t('errors.messages.user_id.record_not_found', user_id: @request_params.user_id) if role.blank?
 
-      childrenRoles = Role.where_parent_role(role.parent_role)
+      children_roles = Role.where_parent_role(role.parent_role)
 
-      users = User.where_all_users_on_roles(childrenRoles.pluck(:id))
+      users = User.where_all_users_on_roles(children_roles.pluck(:id))
 
       @results = users
     end
