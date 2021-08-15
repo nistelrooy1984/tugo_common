@@ -51,5 +51,15 @@ module Common
       presenter = Common::UserPresenter.new(service.result)
       presenter.generate_response
     end
+
+    # cmn_00014 Function to get subordinates Users
+    def get_role_based_subordinate_users
+      request_params = Common::GetByIdRequestParams.new(request.message)
+      request_params.validate!
+      service = Common::GetSubordinateUsersService.new(request_params, nil)
+      service.run!
+      presenter = Common::UsersPresenter.new(service.results)
+      presenter.generate_response
+    end
   end
 end

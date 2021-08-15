@@ -26,4 +26,5 @@ class User < ApplicationRecord
   scope :where_email, ->(email) { where(email: email) if email.present? }
   scope :where_phone, ->(phone) { where(phone: phone) if phone.present? }
   scope :when_user_info, ->(user_info) { where(user_name: user_info).or(where(email: user_info).or(where(phone: user_info))) if user_info.present? }
+  scope :where_all_users_on_roles, ->(role_ids) { where(role_id: role_ids) }
 end

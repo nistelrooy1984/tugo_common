@@ -15,4 +15,5 @@
 #
 
 class Role < ApplicationRecord
+  scope :where_parent_role, ->(parent_role) { where('parent_role LIKE ?', "#{parent_role}::%") if parent_role.present? }
 end
