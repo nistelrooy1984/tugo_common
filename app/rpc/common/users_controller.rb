@@ -19,7 +19,7 @@ module Common
 
     # cmn_00008 Get Users
     def get_users
-      service = Common::GetUsersService.new(auth_header)
+      service = Common::GetUsersService.new(auth_header, jwt)
       service.run!
       presenter = Common::UsersPresenter.new(service.results)
       presenter.generate_response
